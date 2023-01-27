@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>石井木工日報システム</title>
+    <title>石井木工日報</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
@@ -10,6 +10,19 @@
 <body>
 
     <form class="w-75 mx-auto">
+        <label for="pet-select">名前</label>
+
+<select class="form-control w-100 mt-1"　id="name-select">
+    <option value="">--Please choose an option--</option>
+    <option value="hiroshi">ヒロシ</option>
+    <option value="shoichi">ショウイチ</option>
+    <option value="ochiai">オチアイ</option>
+    <option value="shinici">シンイチ</option>
+    <option value="daiji">ダイジ</option>
+    <option value="katsuichi">カツイチ</option>
+    <option value="ken">ケンイチ</option>
+</select>
+
         <p class="mt-3">名前</p>
         <div>
             <input class="form-control w-100 mt-1" name="name" placeholder="">
@@ -18,11 +31,11 @@
         <div>
             <input class="form-control w-100 mt-1" name="udetate">
         </div>
-        <p class="mt-3">設計</p>
+        <p class="mt-3">デザインアーク製造</p>
         <div>
             <input class="form-control w-100 mt-1" name="fukkin">
         </div>
-        <p class="mt-3">製造</p>
+        <p class="mt-3">ダイワラクダ製造</p>
         <div>
             <input class="form-control w-100 mt-1" name="haikin">
         </div>
@@ -71,12 +84,13 @@
 
         $(function () {
             $('form').submit(function () {
+                const nameop = document.getElementById('name-select');
                 const name    = $('input[name="name"]').val();
                 const udetate = $('input[name="udetate"]').val();
                 const fukkin  = $('input[name="fukkin"]').val();
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${nameop}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 sendText(msg);
                 return false;
             });
