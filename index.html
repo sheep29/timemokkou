@@ -84,13 +84,13 @@
 
         $(function () {
             $('form').submit(function () {
-                const nameop = document.getElementById('name-select').value;
+                const sample = document.getElementById('name-select').value;
                 const name    = $('input[name="name"]').val();
                 const udetate = $('input[name="udetate"]').val();
                 const fukkin  = $('input[name="fukkin"]').val();
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${nameop}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 sendText(msg);
                 return false;
             });
