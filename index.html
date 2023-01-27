@@ -12,7 +12,7 @@
     <form class="w-75 mx-auto">
         <label for="pet-select">サンプル</label>
 
-<select class="form-control w-100 mt-1"　id="name-select">
+<select name="name-options" class="form-control w-100 mt-1"　id="name-select">
     <option value="">--Please choose an option--</option>
     <option value="hiroshi">ヒロシ</option>
     <option value="shoichi">ショウイチ</option>
@@ -84,12 +84,13 @@
 
         $(function () {
             $('form').submit(function () {
+                const nameop  = $('[name="name-options"]').val();
                 const name    = $('input[name="name"]').val();
                 const udetate = $('input[name="udetate"]').val();
                 const fukkin  = $('input[name="fukkin"]').val();
                 const haikin  = $('input[name="haikin"]').val();
                 const sukuwat = $('input[name="sukuwat"]').val();
-                const msg = `${name}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
+                const msg = `${nameop}\n${udetate}\n${fukkin}\n${haikin}\n${sukuwat}`;
                 sendText(msg);
                 return false;
             });
