@@ -84,7 +84,7 @@
 
         $(function () {
             $('form').submit(function () {
-                const nameop = document.getElementById('name-select');
+                const nameop = document.getElementById('name-select').val();
                 const name    = $('input[name="name"]').val();
                 const udetate = $('input[name="udetate"]').val();
                 const fukkin  = $('input[name="fukkin"]').val();
